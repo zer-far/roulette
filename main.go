@@ -47,13 +47,13 @@ func init() {
 	randSource := rand.NewSource(time.Now().UnixNano())
 	rng = rand.New(randSource)
 
-	if err := fetchUserAgents(); err != nil {
+	if err := InitUserAgents(); err != nil {
 		fmt.Println("Error fetching user agents:", err)
 	}
 }
 
 // Fetch user agents
-func FetchUserAgents() error {
+func InitUserAgents() error {
 	resp, err := http.Get("https://cdn.jsdelivr.net/gh/microlinkhq/top-user-agents@master/src/index.json")
 	if err != nil {
 		return err
