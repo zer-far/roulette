@@ -53,7 +53,7 @@ func init() {
 }
 
 // Fetch user agents
-func fetchUserAgents() error {
+func FetchUserAgents() error {
 	resp, err := http.Get("https://cdn.jsdelivr.net/gh/microlinkhq/top-user-agents@master/src/index.json")
 	if err != nil {
 		return err
@@ -78,7 +78,7 @@ func fetchUserAgents() error {
 }
 
 // Return random user agent
-func getUserAgent() string {
+func GetUserAgent() string {
 	mu.Lock()
 	defer mu.Unlock()
 
@@ -90,7 +90,7 @@ func getUserAgent() string {
 }
 
 // Return random referrer
-func getReferrer() string {
+func GetReferrer() string {
 	mu.Lock()
 	defer mu.Unlock()
 
