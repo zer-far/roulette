@@ -73,11 +73,12 @@ func fetchUserAgents() error {
 	}
 
 	userAgentsLen = len(userAgents)
+
 	return nil
 }
 
 // Return random user agent
-func getRandomUserAgent() string {
+func getUserAgent() string {
 	mu.Lock()
 	defer mu.Unlock()
 
@@ -89,7 +90,7 @@ func getRandomUserAgent() string {
 }
 
 // Return random referrer
-func GenerateRandomReferer() string {
+func getReferrer() string {
 	mu.Lock()
 	defer mu.Unlock()
 
