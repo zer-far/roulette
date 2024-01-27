@@ -97,5 +97,5 @@ func GetReferrer() string {
 	selectedDomain := domainName[rand.Intn(domainLen)]
 	selectedTLD := tld[rand.Intn(tldLen)]
 
-	return fmt.Sprintf("https://www.%s.%s", selectedDomain, selectedTLD)
+	return fmt.Sprintf("https://www.%s.%s/", selectedDomain, selectedTLD)
 }
